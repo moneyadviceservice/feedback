@@ -35,6 +35,12 @@ module Feedback
         email = ActionMailer::Base.deliveries.last
         expect(email.body.raw_source).to include('this is some feedback')
       end
+
+      it 'adds submission time to the email body' do
+        described_class.feedback(submission).deliver
+        email = ActionMailer::Base.deliveries.last
+        expect(email.body.raw_source).to match /Submission Time: \d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2} (\+|\-)\d{4}/
+      end
     end
   end
 end
