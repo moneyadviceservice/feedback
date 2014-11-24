@@ -19,4 +19,8 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 4.1.8"
 
   s.add_development_dependency 'mas-development_dependencies'
+  s.add_development_dependency 'rspec'
+  s.add_development_dependency 'rspec-rails'
+  s.add_development_dependency 'cucumber'
+  s.add_development_dependency 'cucumber-rails'
 end
