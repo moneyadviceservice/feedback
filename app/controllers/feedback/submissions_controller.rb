@@ -1,12 +1,13 @@
 module Feedback
   class SubmissionsController < ApplicationController
     def index
+      @submission = Submission.new
     end
 
     def create
-      Feedback::SubmissionMailer.feedback.deliver
+      @submission = Submission.new(params[:submission])
 
-      redirect_to submissions_path
+      Feedback::SubmissionMailer.feedback(@submission).deliver
     end
   end
 end
