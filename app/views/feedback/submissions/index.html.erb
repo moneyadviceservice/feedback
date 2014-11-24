@@ -5,3 +5,10 @@
 <p>Need help or advice? Use our contact us page.</p>
 
 <p>What do you like? What don’t you like? What can we add to make it better?</p>
+
+<%= form_for @submission do |f| %>
+  <%= f.label :body %>
+  <%= f.text_field :body %>
+
+  <%= f.submit %>
+<% end %>

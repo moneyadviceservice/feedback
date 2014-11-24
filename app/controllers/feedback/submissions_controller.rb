@@ -1,6 +1,7 @@
 module Feedback
   class SubmissionsController < ApplicationController
     def index
+      @submission = Submission.new
     end
 
     def create
