@@ -4,7 +4,7 @@ module Feedback
 
     def feedback
       mail to: 'tools.help@moneyadviceservice.org.uk',
-           subject: 'Welcome to My Awesome Site'
+           subject: 'Feedback from Account Page'
     end
   end
 end

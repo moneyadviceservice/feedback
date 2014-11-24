@@ -19,5 +19,11 @@ describe Feedback::SubmissionMailer do
       email = ActionMailer::Base.deliveries.last
       expect(email.to).to include('tools.help@moneyadviceservice.org.uk')
     end
+
+    it 'Feedback from Account Page' do
+      described_class.feedback.deliver
+      email = ActionMailer::Base.deliveries.last
+      expect(email.subject).to include('Feedback from Account Page')
+    end
   end
 end
