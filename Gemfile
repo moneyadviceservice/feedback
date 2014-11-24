@@ -1,3 +1,4 @@
+source 'http://gems.test.mas'
 source "https://rubygems.org"
 
 # Declare your gem's dependencies in feedback.gemspec.
