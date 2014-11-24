@@ -4,7 +4,9 @@ module Feedback
     end
 
     def create
-      Feedback::SubmissionMailer.feedback.deliver
+      @submission = Submission.new(params[:submission])
+
+      Feedback::SubmissionMailer.feedback(@submission).deliver
 
       redirect_to submissions_path
     end
