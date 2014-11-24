@@ -7,11 +7,11 @@ require "feedback/version"
 Gem::Specification.new do |s|
   s.name        = "feedback"
   s.version     = Feedback::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Feedback."
-  s.description = "TODO: Description of Feedback."
+  s.authors     = ["Phil, Rachel, Ryan"]
+  s.email       = ["development.team@moneyadviceservice.org.uk"]
+  s.homepage    = "http://www.moneyadviceservice.org.uk"
+  s.summary     = "Allow visitors to submit feedback"
+  s.description = ""
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
