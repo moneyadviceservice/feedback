@@ -4,7 +4,8 @@ module Feedback
   describe SubmissionMailer do
     describe '#feedback' do
       let(:body) { 'this is some feedback' }
-      let(:submission) { Submission.new(body: body) }
+      let(:user_agent) { 'some user agent' }
+      let(:submission) { Submission.new(body: body, user_agent: user_agent) }
 
       it 'sends emails' do
         expect do
@@ -41,6 +42,13 @@ module Feedback
         email = ActionMailer::Base.deliveries.last
         expect(email.body.raw_source).to match /Submission Time: \d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2} (\+|\-)\d{4}/
       end
+
+      it 'adds submission user agent to the email body' do
+        described_class.feedback(submission).deliver
+        email = ActionMailer::Base.deliveries.last
+        expect(email.body.raw_source).to include("User Agent: #{user_agent}")
+      end
     end
   end
 end
+

@@ -16,5 +16,10 @@ describe Feedback::SubmissionsController do
         post :create, { submission: { body: 'make it better' } }
       end.to change { ActionMailer::Base.deliveries.count }.by(1)
     end
+
+    it 'adds user agent to submission' do
+      post :create, { submission: { body: 'make it better' } }
+      expect(assigns(:submission).user_agent).to eql('Rails Testing')
+    end
   end
 end

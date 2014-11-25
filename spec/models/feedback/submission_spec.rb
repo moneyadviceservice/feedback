@@ -2,11 +2,13 @@ require 'spec_helper'
 
 describe Feedback::Submission do
   let(:body) { 'make this site better' }
-  subject { described_class.new(body: body) }
+  let(:user_agent) { 'some user agent' }
+  subject { described_class.new(body: body, user_agent: user_agent) }
 
-  describe '#body' do
-    it 'returns feedback body' do
+  describe 'attributes' do
+    it 'returns expected attributes' do
       expect(subject.body).to eql(body)
+      expect(subject.user_agent).to eql(user_agent)
     end
   end
 
