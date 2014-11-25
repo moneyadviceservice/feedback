@@ -4,8 +4,8 @@ end
 
 When(/^I leave feedback about savings and account creation$/) do
   @feedback ||= 'Thanks for letting us know Your feedback will be viewed by the team.'
-  page.fill_in 'submission_body', with: @feedback
-  page.click_button 'Create Submission'
+  fill_in 'submission_body', with: @feedback
+  click_button 'Create Submission'
 end
 
 Then(/^I should see a confirmation message$/) do
