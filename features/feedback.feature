@@ -9,4 +9,7 @@ Scenario: Submit Feedback
   When I leave feedback about savings and account creation
   Then I should see a confirmation message
 
-
+Scenario: Return to originating place
+  Given I visit a tool
+  When I leave feedback about that tool
+  Then I should be able to navigate back to the tool

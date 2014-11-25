@@ -11,3 +11,16 @@ end
 Then(/^I should see a confirmation message$/) do
   expect(page).to have_content(@feedback)
 end
+
+Given(/^I visit a tool$/) do
+  visit feedback.dummy_tool_path
+end
+
+When(/^I leave feedback about that tool$/) do
+  visit feedback.submissions_path
+end
+
+Then(/^I should be able to navigate back to the tool$/) do
+  click_link 'Back to tool'
+  expect(page).to have_content('dummy tool')
+end
