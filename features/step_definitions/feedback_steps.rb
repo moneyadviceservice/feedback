@@ -1,11 +1,13 @@
 Given(/^I visit the feedback tool$/) do
-  pending # express the regexp above with the code you wish you had
+  visit feedback.submissions_path
 end
 
 When(/^I leave feedback about savings and account creation$/) do
-  pending # express the regexp above with the code you wish you had
+  @feedback ||= 'Thanks for letting us know Your feedback will be viewed by the team.'
+  page.fill_in 'submission_body', with: @feedback
+  page.click_button 'Create Submission'
 end
 
 Then(/^I should see a confirmation message$/) do
-  pending # express the regexp above with the code you wish you had
+  expect(page).to have_content(@feedback)
 end
