@@ -6,9 +6,15 @@
 
 <p>What do you like? What don’t you like? What can we add to make it better?</p>
 
-<%= form_for @submission do |f| %>
-  <%= f.label :body %>
-  <%= f.text_field :body %>
+<%= form_for @submission, builder: Dough::Forms::Builders::Validation do |f| %>
+  <%= f.validation_summary %>
+
+  <%= f.form_row(:body) do %>
+    <%= f.errors_for :body %>
+
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+  <% end %>
 
   <%= f.submit %>
 <% end %>
