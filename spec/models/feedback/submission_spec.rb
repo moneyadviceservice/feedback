@@ -17,4 +17,11 @@ describe Feedback::Submission do
       expect(subject.created_at).to be_within(5.seconds).of(Time.now)
     end
   end
+
+  describe 'validations' do
+    it 'body cannot be blank' do
+      subject.body = ''
+      expect(subject).to_not be_valid
+    end
+  end
 end

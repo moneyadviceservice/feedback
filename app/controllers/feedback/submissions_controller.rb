@@ -7,7 +7,11 @@ module Feedback
     def create
       @submission = Submission.new(submission_params)
 
-      Feedback::SubmissionMailer.feedback(@submission).deliver
+      if @submission.valid?
+        Feedback::SubmissionMailer.feedback(@submission).deliver
+      else
+        render :index
+      end
     end
 
     private

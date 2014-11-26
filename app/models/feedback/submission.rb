@@ -9,6 +9,8 @@ module Feedback
     define_model_callbacks :initialize
     after_initialize :init_created_at
 
+    validates :body, presence: true
+
     def initialize(*args)
       run_callbacks :initialize do
         super
