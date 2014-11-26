@@ -17,6 +17,7 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
 
   s.add_dependency "rails", "~> 4.1.8"
+  s.add_dependency "dough-ruby", '~> 4.0'
 
   s.add_development_dependency 'mas-development_dependencies', '~> 2.3.0.37'
 end
