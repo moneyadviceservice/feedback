@@ -26,7 +26,7 @@ describe Feedback::SubmissionsController do
       it 'renders form again' do
         post :create, { submission: { body: '' } }
 
-        expect(response).to render_template('')
+        expect(response).to render_template('feedback/submissions/index')
       end
     end
   end
