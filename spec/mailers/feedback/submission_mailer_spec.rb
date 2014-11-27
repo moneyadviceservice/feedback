@@ -5,7 +5,8 @@ module Feedback
     describe '#feedback' do
       let(:body) { 'this is some feedback' }
       let(:user_agent) { 'some user agent' }
-      let(:submission) { Submission.new(body: body, user_agent: user_agent) }
+      let(:referer) { 'where_i_came_from'}
+      let(:submission) { Submission.new(body: body, user_agent: user_agent, referer: referer) }
 
       it 'sends emails' do
         expect do
@@ -47,6 +48,11 @@ module Feedback
         described_class.feedback(submission).deliver
         email = ActionMailer::Base.deliveries.last
         expect(email.body.raw_source).to include("User Agent: #{user_agent}")
+      end
+      it 'adds submission refer to the email body' do
+        described_class.feedback(submission).deliver
+        email = ActionMailer::Base.deliveries.last
+        expect(email.body.raw_source).to include("Referer: #{referer}")
       end
     end
   end
