@@ -21,7 +21,7 @@ en:
             <p>Your feedback will be viewed by the team. If you need to talk to us please use one of the methods below:</p>
           contact_html:
             <p>Need help or advice? Use our contact us page.</p>
-          back_to_tool: Back to tool
+          back: Back to tool
   helpers:
     label:
       feedback/submission:
