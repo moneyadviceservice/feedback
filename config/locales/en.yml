@@ -2,11 +2,18 @@ en:
   feedback:
     submissions:
       index:
-        heading: Help us improve this page
-        intro_html: |
-          <p>Only use this form to suggest changes to your account page. We can’t reply to individual ideas.</p>
+        default:
+          heading: Help us improve this page
+          intro_html: |
+            <p>Only use this form to suggest changes to this page. We can’t reply to individual ideas.</p>
 
-          <p>Need help or advice? Use our contact us page.</p>
+            <p>Need help or advice? Use our contact us page.</p>
+        account:
+          heading: Help us improve the Account page
+          intro_html: |
+            <p>Only use this form to suggest changes to your account page. We can’t reply to individual ideas.</p>
+
+            <p>Need help or advice? Use our contact us page.</p>
       create:
         heading: Thanks for letting us know
         outro_html: |
