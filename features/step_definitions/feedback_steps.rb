@@ -3,8 +3,8 @@ Given(/^I visit the feedback tool$/) do
 end
 
 When(/^I leave feedback$/) do
-  @feedback ||= 'Some feedback.'
-  fill_in 'submission_body', with: @feedback
+  feedback_body = 'Some feedback.'
+  fill_in 'submission_body', with: feedback_body
   click_button 'Create Submission'
 end
 
@@ -17,8 +17,9 @@ Given(/^I visit a tool$/) do
 end
 
 When(/^I submit feedback about that tool$/) do
+  feedback_body = 'Some feedback.'
   visit feedback.submissions_path
-  fill_in 'submission_body', with: @feedback
+  fill_in 'submission_body', with: feedback_body
   click_button 'Create Submission'
 end
 

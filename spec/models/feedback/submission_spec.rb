@@ -3,11 +3,14 @@ require 'spec_helper'
 describe Feedback::Submission do
   let(:body) { 'make this site better' }
   let(:referer) { root_path }
-  subject { described_class.new(body: body, referer: referer) }
+  let(:user_agent) { 'some user agent' }
 
-  describe '#body' do
-    it 'returns feedback body' do
+  subject { described_class.new(body: body, user_agent: user_agent, referer: referer) }
+
+  describe 'attributes' do
+    it 'returns expected attributes' do
       expect(subject.body).to eql(body)
+      expect(subject.user_agent).to eql(user_agent)
     end
   end
 
@@ -17,9 +20,16 @@ describe Feedback::Submission do
     end
   end
 
-  describe 'how_do_i_hash_on_vim?:referer' do
+  describe '#referer' do
     it 'returns the url of the referring tool' do
       expect(subject.referer).to eql(referer)
+    end
+  end
+
+  describe 'validations' do
+    it 'body cannot be blank' do
+      subject.body = ''
+      expect(subject).to_not be_valid
     end
   end
 end

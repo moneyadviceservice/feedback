@@ -28,5 +28,18 @@ describe Feedback::SubmissionsController do
         { body: 'make it better', referer: 'where_i_came_from'  } }
       expect(assigns(:referer)).to eq('where_i_came_from')
     end
+
+    it 'adds user agent to submission' do
+      post :create, { submission: { body: 'make it better' } }
+      expect(assigns(:submission).user_agent).to eql('Rails Testing')
+    end
+
+    context 'when body is empty' do
+      it 'renders form again' do
+        post :create, { submission: { body: '' } }
+
+        expect(response).to render_template('feedback/submissions/index')
+      end
+    end
   end
 end

@@ -4,10 +4,12 @@ module Feedback
   class Submission
     include ::ActiveModel::Model
 
-    attr_accessor :body, :created_at, :referer
+    attr_accessor :body, :created_at, :referer, :user_agent
 
     define_model_callbacks :initialize
     after_initialize :init_created_at
+
+    validates :body, presence: true
 
     def initialize(*args)
       run_callbacks :initialize do
