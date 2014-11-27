@@ -26,7 +26,7 @@ describe Feedback::SubmissionsController do
     it 'extracts the referer address from the post' do
       post :create, { submission:
         { body: 'make it better', referer: 'where_i_came_from'  } }
-      expect(assigns(:referer)).to eq('where_i_came_from')
+      expect(assigns(:submission).referer).to eq('where_i_came_from')
     end
 
     it 'adds user agent to submission' do
