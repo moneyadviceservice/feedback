@@ -9,7 +9,9 @@ When(/^I leave feedback$/) do
 end
 
 Then(/^I should see a confirmation message$/) do
-  expect(page).to have_content('Thanks for letting us know Your feedback')
+  expect(page).to have_content(
+    I18n.t('feedback.submissions.create.heading')
+    )
 end
 
 Given(/^I visit a tool$/) do
@@ -24,6 +26,8 @@ When(/^I submit feedback about that tool$/) do
 end
 
 Then(/^I should be able to navigate back to the tool$/) do
-  click_link 'Back to tool'
-  expect(page).to have_content('Improve this page')
+  old_path = page.current_path
+  click_link I18n.t('feedback.submissions.create.back_to_tool')
+  new_path = page.current_path
+  expect(new_path).to_not eq(old_path)
 end
