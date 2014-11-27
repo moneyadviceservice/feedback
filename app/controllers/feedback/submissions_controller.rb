@@ -2,10 +2,13 @@ module Feedback
   class SubmissionsController < ApplicationController
     def index
       @submission = Submission.new
+      @submission.referer = request.referer
     end
 
     def create
       @submission = Submission.new(submission_params)
+
+      @referer = @submission.referer
 
       if @submission.valid?
         Feedback::SubmissionMailer.feedback(@submission).deliver

@@ -2,8 +2,10 @@ require 'spec_helper'
 
 describe Feedback::Submission do
   let(:body) { 'make this site better' }
+  let(:referer) { root_path }
   let(:user_agent) { 'some user agent' }
-  subject { described_class.new(body: body, user_agent: user_agent) }
+
+  subject { described_class.new(body: body, user_agent: user_agent, referer: referer) }
 
   describe 'attributes' do
     it 'returns expected attributes' do
@@ -15,6 +17,12 @@ describe Feedback::Submission do
   describe '#created_at' do
     it 'returns created_at timestamp' do
       expect(subject.created_at).to be_within(5.seconds).of(Time.now)
+    end
+  end
+
+  describe '#referer' do
+    it 'returns the url of the referring tool' do
+      expect(subject.referer).to eql(referer)
     end
   end
 

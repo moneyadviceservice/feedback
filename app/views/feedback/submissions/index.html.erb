@@ -2,6 +2,7 @@
 
 <%= t('.intro_html') %>
 
+
 <%= form_for @submission, builder: Dough::Forms::Builders::Validation do |f| %>
   <%= f.validation_summary %>
 
@@ -11,6 +12,7 @@
     <%= f.label :body %>
     <%= f.text_area :body %>
   <% end %>
-
+  <%= f.hidden_field :referer %>
   <%= f.submit class: 'button button--primary' %>
+
 <% end %>
