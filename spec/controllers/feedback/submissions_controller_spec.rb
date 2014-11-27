@@ -4,7 +4,6 @@ describe Feedback::SubmissionsController do
   routes { Feedback::Engine.routes }
 
   describe 'GET #index' do
-
     it 'works' do
       get :index
       expect(response).to be_success
