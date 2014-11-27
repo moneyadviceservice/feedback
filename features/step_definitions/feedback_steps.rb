@@ -13,14 +13,16 @@ Then(/^I should see a confirmation message$/) do
 end
 
 Given(/^I visit a tool$/) do
-  visit feedback.dummy_tool_path
+  visit feedback.root_path
 end
 
 When(/^I leave feedback about that tool$/) do
   visit feedback.submissions_path
+  fill_in 'submission_body', with: @feedback
+  click_button 'Create Submission'
 end
 
 Then(/^I should be able to navigate back to the tool$/) do
   click_link 'Back to tool'
-  expect(page).to have_content('dummy tool')
+  expect(page).to have_content('Improve this page')
 end
