@@ -4,7 +4,7 @@ module Feedback
   class Submission
     include ::ActiveModel::Model
 
-    attr_accessor :body, :created_at, :referer, :user_agent
+    attr_accessor :body, :created_at, :referer, :user_agent, :source
 
     define_model_callbacks :initialize
     after_initialize :init_created_at

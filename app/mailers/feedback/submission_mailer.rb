@@ -6,7 +6,11 @@ module Feedback
       @submission = submission
 
       mail to: 'tools.help@moneyadviceservice.org.uk',
-           subject: 'Feedback from Account Page'
+           subject: "Feedback from #{subject_from_submission(@submission)} Page"
+    end
+
+    def subject_from_submission(submission)
+      submission.source.try(:humanize) || 'Unknown'
     end
   end
 end

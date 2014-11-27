@@ -34,6 +34,11 @@ describe Feedback::SubmissionsController do
       expect(assigns(:submission).user_agent).to eql('Rails Testing')
     end
 
+    it 'adds source to submission' do
+      post :create, { submission: { body: 'make it better', source: 'account' } }
+      expect(assigns(:submission).source).to eql('account')
+    end
+
     context 'when body is empty' do
       it 'renders form again' do
         post :create, { submission: { body: '' } }

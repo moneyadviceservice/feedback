@@ -6,7 +6,8 @@ module Feedback
       let(:body) { 'this is some feedback' }
       let(:user_agent) { 'some user agent' }
       let(:referer) { 'where_i_came_from'}
-      let(:submission) { Submission.new(body: body, user_agent: user_agent, referer: referer) }
+      let(:source) { 'account'}
+      let(:submission) { Submission.new(body: body, user_agent: user_agent, referer: referer, source: source) }
 
       it 'sends emails' do
         expect do
@@ -26,10 +27,19 @@ module Feedback
         expect(email.to).to include('tools.help@moneyadviceservice.org.uk')
       end
 
-      it 'Feedback from Account Page' do
+      it 'subject is Feedback from Account Page' do
         described_class.feedback(submission).deliver
         email = ActionMailer::Base.deliveries.last
         expect(email.subject).to include('Feedback from Account Page')
+      end
+
+      context 'when source is unknown' do
+        it 'subject is Feedback from Unknown Page' do
+          submission.source = nil
+          described_class.feedback(submission).deliver
+          email = ActionMailer::Base.deliveries.last
+          expect(email.subject).to include('Feedback from Unknown Page')
+        end
       end
 
       it 'adds submission to the email body' do
