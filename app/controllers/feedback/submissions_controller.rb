@@ -3,6 +3,7 @@ module Feedback
     def index
       @submission = Submission.new
       @submission.referer = request.referer
+      @submission.source = params[:source]
     end
 
     def create
