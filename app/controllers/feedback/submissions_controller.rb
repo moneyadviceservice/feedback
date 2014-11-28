@@ -10,7 +10,7 @@ module Feedback
       @submission = Submission.new(submission_params)
 
       if @submission.valid?
-        Feedback::SubmissionMailer.feedback(@submission).deliver
+        Feedback::SubmissionMailer.delay(queue: 'frontend_email').feedback(@submission)
       else
         render :index
       end
