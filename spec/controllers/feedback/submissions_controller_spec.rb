@@ -65,9 +65,3 @@ describe Feedback::SubmissionsController do
   
   end
 end
-
-
-
-        
-        
-        
