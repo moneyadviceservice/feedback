@@ -10,7 +10,7 @@ end
 
 Then(/^I should see a confirmation message$/) do
   expect(page).to have_content(
-    I18n.t('feedback.submissions.create.heading')
+    I18n.t('feedback.submissions.create.default.heading')
     )
 end
 
@@ -27,7 +27,7 @@ end
 
 Then(/^I should be able to navigate back to the tool$/) do
   old_path = page.current_path
-  click_link I18n.t('feedback.submissions.create.back_to_tool')
+  click_link I18n.t('feedback.submissions.create.default.back')
   new_path = page.current_path
   expect(new_path).to_not eq(old_path)
 end
