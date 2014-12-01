@@ -2,7 +2,6 @@
 
 <%= t_with_source('.intro_html') %>
 
-
 <%= form_for @submission, builder: Dough::Forms::Builders::Validation do |f| %>
   <%= f.validation_summary %>
 
@@ -10,7 +9,7 @@
     <%= f.errors_for :body %>
 
     <%= f.label :body, class: 'form__label-heading' %>
-    <%= f.text_area :body %>
+    <%= f.text_area :body, rows: 5 %>
   <% end %>
 
   <%= f.hidden_field :referer %>
