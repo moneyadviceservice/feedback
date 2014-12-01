@@ -21,3 +21,8 @@
 
 en:
   hello: "Hello world"
+  feedback:
+    submissions:
+      index:
+        account:
+          heading: test account heading
