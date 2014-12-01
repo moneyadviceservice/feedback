@@ -2,13 +2,17 @@ module Feedback
   module SubmissionsHelper
     def t_with_source(*args)
       original_key = args[0]
-      namespace = namespace_from_source(params[:source])
+      namespace = namespace_from_source(source)
       new_key = ".#{namespace}.#{original_key}"
 
       t(new_key, *args[1..-1])
     end
 
     private
+
+    def source
+      params[:source] || params[:submission].try(:[], :source)
+    end
 
     def available_sources
       I18n.t('feedback.submissions.index').stringify_keys.keys
