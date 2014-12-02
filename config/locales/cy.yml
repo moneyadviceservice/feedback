@@ -1,0 +1,28 @@
+cy:
+  feedback:
+    site_title: Feedback
+    site_description: Help us improve the Money Advice Service
+    submissions:
+      index:
+        default:
+          heading: Help us improve this page
+          intro_html: |
+            <p>Only use this form to suggest changes to this page. We can’t reply to individual ideas.</p>
+
+            <p>Need help or advice? Use our contact us page.</p>
+      create:
+        default:
+          heading: Thanks for letting us know
+          outro_html: |
+            <p>Your feedback will be viewed by the team. If you need to talk to us please use one of the methods below:</p>
+          contact_html:
+            <p>Need help or advice? Use our contact us page.</p>
+          back: Continue with what you were doing..
+  helpers:
+    label:
+      feedback/submission:
+        body: 'What do you like? What don’t you like? What can we add to make it better?'
+  activemodel:
+    attributes:
+      feedback/submission:
+        body: Feedback
