@@ -1,4 +1,4 @@
 module Feedback
-  class ApplicationController < ActionController::Base
+  class ApplicationController < Feedback.parent_controller.constantize
   end
 end
