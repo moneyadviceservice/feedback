@@ -18,6 +18,14 @@ module Feedback
     end
 
     helper_method :alternate_locale
+
+    def breadcrumbs
+      ::BreadcrumbTrail.home
+    rescue
+      []
+    end
+
+    helper_method :breadcrumbs
   end
 end
 
