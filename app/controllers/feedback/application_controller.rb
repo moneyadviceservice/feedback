@@ -12,6 +12,12 @@ module Feedback
     end
 
     helper_method :alternate_url
+
+    def alternate_locale
+      :en
+    end
+
+    helper_method :alternate_locale
   end
 end
 
