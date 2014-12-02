@@ -6,5 +6,12 @@ module Feedback
     end
 
     helper_method :alternate_options
+
+    def alternate_url
+      ''
+    end
+
+    helper_method :alternate_url
   end
 end
+
