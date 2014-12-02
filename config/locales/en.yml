@@ -1,5 +1,7 @@
 en:
   feedback:
+    site_title: Feedback
+    site_description: Help us improve the Money Advice Service
     submissions:
       index:
         default:

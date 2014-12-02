@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Feedback</title>
-  <%= stylesheet_link_tag    "feedback/application", media: "all" %>
-  <%= javascript_include_tag "feedback/application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<% set_meta_tags site: t('feedback.site_title'),
+                 description: t('feedback.site_description')
+%>
 
-<%= yield %>
+<% content_for(:engine_content) do %>
+  <%= yield %>
+<% end %>
 
-</body>
-</html>
+<%= render template: parent_template %>
