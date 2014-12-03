@@ -14,5 +14,6 @@ CI_EXECUTOR_NUMBER=${EXECUTOR_NUMBER-0}
 
 bundle exec bundle install --jobs $BUNDLE_JOBS
 
+bundle exec rake db:migrate
 bundle exec rspec
 bundle exec cucumber
