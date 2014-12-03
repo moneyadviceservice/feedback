@@ -26,6 +26,12 @@ module Feedback
     end
 
     helper_method :breadcrumbs
+
+    def display_category_directory?
+      false
+    end
+
+    helper_method :display_category_directory?
   end
 end
 
