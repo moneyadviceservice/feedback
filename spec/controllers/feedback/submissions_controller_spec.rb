@@ -17,11 +17,6 @@ describe Feedback::SubmissionsController do
   end
 
   describe 'POST #create' do
-    it 'sends an email' do
-      expect do
-        post :create, { submission: { body: 'make it better' } }
-      end.to change { ActionMailer::Base.deliveries.count }.by(1)
-    end
 
     it 'extracts the referer address from the post' do
       post :create, { submission:
@@ -46,5 +41,26 @@ describe Feedback::SubmissionsController do
         expect(response).to render_template('feedback/submissions/index')
       end
     end
+
+    context 'sends' do
+      it 'via delayed job' do
+        expect do
+          post :create, { submission: { body: 'make it better' } }
+        end.to change { Delayed::Job.count }.by(1)
+      end
+
+      it 'using the frontend specific queue' do
+        post :create, { submission: { body: 'make it better' } }
+        expect(Delayed::Job.last.queue).to eql('frontend_email')
+      end
+
+      it 'an email' do
+        expect do
+          post :create, { submission: { body: 'make it better' } }
+          Delayed::Job.last.payload_object.perform
+        end.to change { ActionMailer::Base.deliveries.count }.by(1)
+      end
+    end
+  
   end
 end

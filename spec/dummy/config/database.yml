@@ -1,0 +1,13 @@
+development:
+  adapter: sqlite3
+  username: root
+  database: mas_development
+  pool: 5
+  timeout: 5000
+  encoding: utf8
+
+test:
+  adapter: sqlite3
+  database: db/test.sqlite3
+  pool: 5
+  timeout: 5000
