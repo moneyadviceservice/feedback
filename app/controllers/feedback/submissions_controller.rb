@@ -1,5 +1,5 @@
 module Feedback
-  class SubmissionsController < ApplicationController
+  class SubmissionsController < Feedback::ApplicationController
     def index
       @submission = Submission.new
       @submission.referer = request.referer
