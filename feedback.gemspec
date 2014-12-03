@@ -22,5 +22,4 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'mas-development_dependencies', '~> 2.3.0.37'
   s.add_development_dependency 'i18n-debug'
-  s.add_development_dependency 'sqlite3'
 end
