@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'delayed_job'
 
 describe Feedback::SubmissionsController do
   routes { Feedback::Engine.routes }
