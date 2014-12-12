@@ -13,10 +13,8 @@ en:
       create:
         default:
           heading: Thanks for letting us know
-          outro_html: |
-            <p>Your feedback will be viewed by the team. If you need to talk to us please use one of the methods below:</p>
-          contact_html:
-            <p>Need help or advice? Use our contact us page.</p>
+          outro: "Your feedback will be viewed by the team. If you need to talk to us please use one of the methods below:"
+          contact: Need help or advice? Use our contact us page.
           back: Continue with what you were doing..
   helpers:
     label:

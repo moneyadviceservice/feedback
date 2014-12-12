@@ -1,7 +1,11 @@
 <h1><%= t_with_source('.heading') %></h1>
 
-<%= t_with_source('.outro_html') %>
+<p>
+  <%= t_with_source('.outro') %>
+</p>
 
-<%= t_with_source('.contact_html') %>
+<p>
+  <%= t_with_source('.contact') %>
+</p>
 
 <p><%= link_to t_with_source('.back'), @submission.referer, class: 'button button--primary' %>
