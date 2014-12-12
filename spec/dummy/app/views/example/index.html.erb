@@ -1,3 +1,13 @@
-<p><%= link_to 'Improve this page', feedback.root_path %></p>
-<p><%= link_to 'Improve Account page', feedback.root_path(source: 'account') %></p>
-<p><%= link_to 'Improve Home page', feedback.root_path(source: 'home') %></p>
+<h1>Feedback</h1>
+
+<h2>English</h2>
+
+<p><%= link_to 'Improve this page', feedback.root_path(locale: :en) %></p>
+<p><%= link_to 'Improve Account page', feedback.root_path(locale: :en, source: 'account') %></p>
+<p><%= link_to 'Improve Home page', feedback.root_path(locale: :en, source: 'home') %></p>
+
+<h2>Welsh</h2>
+
+<p><%= link_to 'Improve this page', feedback.root_path(locale: :cy) %></p>
+<p><%= link_to 'Improve Account page', feedback.root_path(locale: :cy, source: 'account') %></p>
+<p><%= link_to 'Improve Home page', feedback.root_path(locale: :cy, source: 'home') %></p>

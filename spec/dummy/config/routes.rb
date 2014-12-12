@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root 'example#index'
 
-  mount Feedback::Engine => "/feedback"
+  scope '/:locale', locale: /en|cy/ do
+    mount Feedback::Engine => "/feedback"
+  end
 end
