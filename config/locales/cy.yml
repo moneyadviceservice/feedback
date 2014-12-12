@@ -19,7 +19,7 @@ cy:
   helpers:
     label:
       feedback/submission:
-        body: 'Beth ydych chi'n ei hoffi? Beth nad ydych chi'n ei hoffi? Beth allwn ni ei ychwanegu er mwyn ei wella?'
+        body: "Beth ydych chi'n ei hoffi? Beth nad ydych chi'n ei hoffi? Beth allwn ni ei ychwanegu er mwyn ei wella?"
   activemodel:
     attributes:
       feedback/submission:
