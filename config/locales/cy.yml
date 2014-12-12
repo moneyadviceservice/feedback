@@ -5,21 +5,21 @@ cy:
     submissions:
       index:
         default:
-          heading: Help us improve this page
+          heading: Rhowch gymorth i ni wella’r dudalen hon
           intro_html: |
-            <p>Only use this form to suggest changes to this page. We can’t reply to individual ideas.</p>
+            <p>Defnyddiwch y ffurflen hon i awgrymu newidiadau i’r dudalen hon yn unig. Ni allwn ymateb i syniadau unigol.</p>
 
-            <p>Need help or advice? Use our contact us page.</p>
+            <p>Angen cymorth neu gyngor? Defnyddiwch ein tudalen cysylltwch a ni.</p>
       create:
         default:
-          heading: Thanks for letting us know
-          outro: "Your feedback will be viewed by the team. If you need to talk to us please use one of the methods below:"
-          contact: Need help or advice? Use our contact us page.
-          back: Continue with what you were doing..
+          heading: Diolch am adael i ni wybod
+          outro: "Bydd y tim yn edrych ar eich adborth. Os bydd angen i chi siarad efo ni defnyddiwch un o'r dulliau canlynol:"
+          contact: Angen cymorth neu gyngor? Ewch i'n tudalen ni.
+          back: Parhau a'r hyn yr oeddech chi yn ei wneud.
   helpers:
     label:
       feedback/submission:
-        body: 'What do you like? What don’t you like? What can we add to make it better?'
+        body: 'Beth ydych chi'n ei hoffi? Beth nad ydych chi'n ei hoffi? Beth allwn ni ei ychwanegu er mwyn ei wella?'
   activemodel:
     attributes:
       feedback/submission:
