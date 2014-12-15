@@ -13,8 +13,8 @@ cy:
       create:
         default:
           heading: Diolch am adael i ni wybod
-          outro: "Bydd y tim yn edrych ar eich adborth. Os bydd angen i chi siarad efo ni defnyddiwch un o'r dulliau canlynol:"
-          contact: Angen cymorth neu gyngor? Ewch i'n tudalen ni.
+          outro_html: "Bydd y tim yn edrych ar eich adborth. Os bydd angen i chi siarad efo ni defnyddiwch un o'r dulliau canlynol:"
+          contact_html: Angen cymorth neu gyngor? Ewch i'n tudalen ni.
           back: Parhau a'r hyn yr oeddech chi yn ei wneud.
   helpers:
     label:
