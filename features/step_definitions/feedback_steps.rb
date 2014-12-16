@@ -5,7 +5,7 @@ end
 When(/^I leave feedback$/) do
   feedback_body = 'Some feedback.'
   fill_in 'submission_body', with: feedback_body
-  click_button 'Create Submission'
+  click_button 'Submit'
 end
 
 Then(/^I should see a confirmation message$/) do
@@ -22,7 +22,7 @@ When(/^I submit feedback about that tool$/) do
   feedback_body = 'Some feedback.'
   visit feedback.submissions_path(locale: :en)
   fill_in 'submission_body', with: feedback_body
-  click_button 'Create Submission'
+  click_button 'Submit'
 end
 
 Then(/^I should be able to navigate back to the tool$/) do
