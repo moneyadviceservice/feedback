@@ -20,6 +20,7 @@ cy:
     label:
       feedback/submission:
         body: "Beth ydych chi'n ei hoffi? Beth nad ydych chi'n ei hoffi? Beth allwn ni ei ychwanegu er mwyn ei wella?"
+        submit: Cyflwyno
   activemodel:
     attributes:
       feedback/submission:

@@ -20,6 +20,7 @@ en:
     label:
       feedback/submission:
         body: 'What do you like? What don’t you like? What can we add to make it better?'
+        submit: Submit
   activemodel:
     attributes:
       feedback/submission:
