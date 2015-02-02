@@ -4,12 +4,18 @@
 
 <%= form_for @submission, builder: Dough::Forms::Builders::Validation do |f| %>
   <%= f.validation_summary %>
-
+  <%= f.form_row(:helpful) do %>
+    <%= f.radio_button(:helpful, "yes") %>
+    <%= f.label(:helpful_yes, "I found this page helpful") %>
+    <%= f.radio_button(:helpful, "no") %>
+    <%= f.label(:helpful_no, "I did not find this page helpful") %>
+  <% end %>
   <%= f.form_row(:body) do %>
     <%= f.errors_for :body %>
 
     <%= f.label :body, class: 'form__label-heading' %>
     <%= f.text_area :body, rows: 5 %>
+
   <% end %>
 
   <%= f.hidden_field :referer %>
