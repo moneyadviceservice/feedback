@@ -19,6 +19,8 @@ en:
   helpers:
     label:
       feedback/submission:
+        helpful_yes: "I found this page helpful"
+        heplful_no: "I did not find this page helpful"
         body: 'What do you like? What don’t you like? What can we add to make it better?'
         submit: Submit
   activemodel:

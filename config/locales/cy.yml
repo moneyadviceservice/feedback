@@ -19,6 +19,8 @@ cy:
   helpers:
     label:
       feedback/submission:
+        helpful_yes: "I found this page helpful"
+        heplful_no: "I did not find this page helpful"
         body: "Beth ydych chi'n ei hoffi? Beth nad ydych chi'n ei hoffi? Beth allwn ni ei ychwanegu er mwyn ei wella?"
         submit: Cyflwyno
   activemodel:

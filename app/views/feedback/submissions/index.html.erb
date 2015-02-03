@@ -6,9 +6,9 @@
   <%= f.validation_summary %>
   <%= f.form_row(:helpful) do %>
     <%= f.radio_button(:helpful, "yes") %>
-    <%= f.label(:helpful_yes, "I found this page helpful") %>
+    <%= f.label(:helpful_yes, t('helpers.label.feedback/submission.helpful_yes')) %>
     <%= f.radio_button(:helpful, "no") %>
-    <%= f.label(:helpful_no, "I did not find this page helpful") %>
+    <%= f.label(:helpful_no, t('helpers.label.feedback/submission.helpful_no')) %>
   <% end %>
   <%= f.form_row(:body) do %>
     <%= f.errors_for :body %>
