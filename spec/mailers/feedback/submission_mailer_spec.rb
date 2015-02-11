@@ -7,8 +7,8 @@ module Feedback
       let(:user_agent) { 'some user agent' }
       let(:referer) { 'where_i_came_from'}
       let(:source) { 'account'}
-      let(:helpful) { 'yes'}
-      let(:submission) { Submission.new(body: body, user_agent: user_agent, referer: referer, source: source, helpful: helpful) }
+      let(:useful) { 'yes'}
+      let(:submission) { Submission.new(body: body, user_agent: user_agent, referer: referer, source: source, useful: useful) }
 
       it 'sends emails' do
         expect do
@@ -67,10 +67,10 @@ module Feedback
         expect(email.body.raw_source).to include("Referer: #{referer}")
       end
 
-      it 'adds submission helpful to the email body' do
+      it 'adds submission useful to the email body' do
         described_class.feedback(submission).deliver
         email = ActionMailer::Base.deliveries.last
-        expect(email.body.raw_source).to include("Was this page helpful: #{helpful}")
+        expect(email.body.raw_source).to include("Was this page useful: #{useful}")
       end  
     end
   end

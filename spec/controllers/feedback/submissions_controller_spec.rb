@@ -34,9 +34,9 @@ describe Feedback::SubmissionsController do
       expect(assigns(:submission).source).to eql('account')
     end
 
-    it 'adds the choice of helpful or not helpful to submission' do
-      post :create, submission: { body: 'make it better', helpful: 'yes'}, locale: :en
-      expect(assigns(:submission).helpful).to eql('yes')
+    it 'adds the choice of useful or not useful to submission' do
+      post :create, submission: { body: 'make it better', useful: 'yes'}, locale: :en
+      expect(assigns(:submission).useful).to eql('yes')
     end
 
     context 'when body is empty' do
