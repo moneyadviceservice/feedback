@@ -28,18 +28,18 @@ module Feedback
         expect(email.to).to include('tools.help@moneyadviceservice.org.uk')
       end
 
-      it 'subject is Feedback from Account Page' do
+      it 'subject is Feedback for Account' do
         described_class.feedback(submission).deliver
         email = ActionMailer::Base.deliveries.last
-        expect(email.subject).to include('Feedback from Account Page')
+        expect(email.subject).to include('Feedback for Account')
       end
 
       context 'when source is unknown' do
-        it 'subject is Feedback from Unknown Page' do
+        it 'subject is Feedback for Unknown' do
           submission.source = nil
           described_class.feedback(submission).deliver
           email = ActionMailer::Base.deliveries.last
-          expect(email.subject).to include('Feedback from Unknown Page')
+          expect(email.subject).to include('Feedback for Unknown')
         end
       end
 
