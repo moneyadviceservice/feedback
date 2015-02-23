@@ -5,11 +5,19 @@
 <%= form_for @submission, builder: Dough::Forms::Builders::Validation do |f| %>
   <%= f.validation_summary %>
 
+  <%= t('helpers.label.feedback/submission.useful_title') %>
+  <%= f.form_row(:useful) do %>
+    <%= f.radio_button(:useful, "yes") %>
+    <%= f.label(:useful_yes, t('helpers.label.feedback/submission.useful_yes')) %>
+    <%= f.radio_button(:useful, "no") %>
+    <%= f.label(:useful_no, t('helpers.label.feedback/submission.useful_no')) %>
+  <% end %>
   <%= f.form_row(:body) do %>
     <%= f.errors_for :body %>
 
     <%= f.label :body, class: 'form__label-heading' %>
     <%= f.text_area :body, rows: 5 %>
+
   <% end %>
 
   <%= f.hidden_field :referer %>

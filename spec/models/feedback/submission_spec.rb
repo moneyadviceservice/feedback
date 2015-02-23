@@ -5,14 +5,16 @@ describe Feedback::Submission do
   let(:referer) { root_path }
   let(:user_agent) { 'some user agent' }
   let(:source) { 'account' }
+  let(:useful) { 'yes'}
 
-  subject { described_class.new(body: body, user_agent: user_agent, referer: referer, source: source) }
+  subject { described_class.new(body: body, user_agent: user_agent, referer: referer, source: source, useful: useful) }
 
   describe 'attributes' do
     it 'returns expected attributes' do
       expect(subject.body).to eql(body)
       expect(subject.user_agent).to eql(user_agent)
       expect(subject.source).to eql(source)
+      expect(subject.useful).to eql(useful)
     end
   end
 

@@ -6,11 +6,12 @@ module Feedback
       @submission = submission
 
       mail to: 'tools.help@moneyadviceservice.org.uk',
-           subject: "Feedback from #{subject_from_submission(@submission)} Page"
+           subject: "Feedback for #{subject_from_submission(@submission)}: #{@submission.created_at} "
     end
 
     def subject_from_submission(submission)
       submission.source.try(:humanize) || 'Unknown'
     end
+
   end
 end

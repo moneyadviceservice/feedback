@@ -19,6 +19,9 @@ cy:
   helpers:
     label:
       feedback/submission:
+        useful_title: "A wnaethoch chi ddod o hyd hon yn ddefnyddiol?"
+        useful_yes: "Ydw"
+        useful_no: "Na"
         body: "Beth ydych chi'n ei hoffi? Beth nad ydych chi'n ei hoffi? Beth allwn ni ei ychwanegu er mwyn ei wella?"
         submit: Cyflwyno
   activemodel:
