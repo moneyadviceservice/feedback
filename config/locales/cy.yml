@@ -4,6 +4,9 @@ cy:
     site_description: Help us improve the Money Advice Service
     submissions:
       index:
+        meta:
+          title: Feedback
+          canonical: https://www.moneyadviceservice.org.uk/cy/improvements
         default:
           heading: Rhowch gymorth i ni wella’r dudalen hon
           intro_html: |
