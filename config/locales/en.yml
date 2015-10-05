@@ -4,6 +4,9 @@ en:
     site_description: Help us improve the Money Advice Service
     submissions:
       index:
+        meta:
+          title: Feedback
+          canonical: https://www.moneyadviceservice.org.uk/en/improvements
         default:
           heading: Help us improve this page
           intro_html: |
