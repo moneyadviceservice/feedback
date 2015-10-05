@@ -1,5 +1,6 @@
-<% set_meta_tags(title:      t('.meta.title'),
-                 canonical:  t('.meta.canonical')) %>
+<% content_for(:head) do %>
+  <link href="<%= t('.meta.canonical') %>" rel="canonical" />
+<% end %>
 
 <h1><%= t_with_source('.heading') %></h1>
 

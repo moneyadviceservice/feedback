@@ -9,4 +9,3 @@ group :test do
 end
 
 gem 'mas-build', '~> 2.0' if ENV['MAS_BUILD']
-
