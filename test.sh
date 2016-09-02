@@ -14,6 +14,11 @@ CI_EXECUTOR_NUMBER=${EXECUTOR_NUMBER-0}
 
 bundle exec bundle install --jobs $BUNDLE_JOBS
 
-bundle exec rake db:migrate
+if [ -n "$GO_PIPELINE_NAME" ]; then
+  # set up test DB if running on CI
+  mv spec/dummy/config/database{-ci,}.yml
+fi
+
+bundle exec rake db:drop db:create db:migrate
 bundle exec rspec
 bundle exec cucumber
