@@ -19,6 +19,4 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 4.1"
   s.add_dependency "dough-ruby", '~> 5.0'
   s.add_dependency 'delayed_job_active_record'
-
-  s.add_development_dependency 'i18n-debug'
 end
