@@ -20,5 +20,5 @@ if [ -n "$GO_PIPELINE_NAME" ]; then
 fi
 
 bundle exec rake db:drop db:create db:migrate
-bundle exec rspec
+bundle exec rspec --format=documentation
 bundle exec cucumber
