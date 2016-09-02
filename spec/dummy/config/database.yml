@@ -1,13 +1,13 @@
 development:
-  adapter: sqlite3
+  adapter: mysql2
   username: root
-  database: mas_development
+  database: feedback_development
   pool: 5
   timeout: 5000
-  encoding: utf8
 
 test:
-  adapter: sqlite3
-  database: db/test.sqlite3
+  adapter: mysql2
+  username: root
+  database: feedback_test
   pool: 5
   timeout: 5000

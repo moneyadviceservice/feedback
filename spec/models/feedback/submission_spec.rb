@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Feedback::Submission do
   let(:body) { 'make this site better' }
-  let(:referer) { root_path }
+  let(:referer) { '/' }
   let(:user_agent) { 'some user agent' }
   let(:source) { 'account' }
   let(:useful) { 'yes'}

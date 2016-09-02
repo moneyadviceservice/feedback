@@ -3,8 +3,11 @@ source "https://rubygems.org"
 
 gemspec
 
+gem 'mysql2'
+
 group :test do
-  gem 'mas-development_dependencies', '~> 2.3.0.37'
+  gem 'rspec-rails'
+  gem 'i18n-debug'
   gem 'sqlite3'
 end
 
