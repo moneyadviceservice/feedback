@@ -7,6 +7,7 @@ gem 'mysql2'
 
 group :test do
   gem 'rspec-rails'
+  gem 'cucumber-rails', require: false
   gem 'i18n-debug'
   gem 'sqlite3'
 end
