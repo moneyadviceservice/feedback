@@ -8,6 +8,8 @@ gem 'mysql2'
 group :development, :test do
   gem 'danger', require: false
   gem 'danger-rubocop', require: false
+  gem 'rubocop', '~> 0.63.1', require: false
+  gem 'rubocop-rspec'
 end
 
 group :test do

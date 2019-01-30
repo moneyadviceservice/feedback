@@ -1,13 +1,13 @@
 require 'spec_helper'
 
 describe Feedback::Submission do
+  subject { described_class.new(body: body, user_agent: user_agent, referer: referer, source: source, useful: useful) }
+
   let(:body) { 'make this site better' }
   let(:referer) { '/' }
   let(:user_agent) { 'some user agent' }
   let(:source) { 'account' }
-  let(:useful) { 'yes'}
-
-  subject { described_class.new(body: body, user_agent: user_agent, referer: referer, source: source, useful: useful) }
+  let(:useful) { 'yes' }
 
   describe 'attributes' do
     it 'returns expected attributes' do
@@ -33,7 +33,7 @@ describe Feedback::Submission do
   describe 'validations' do
     it 'body cannot be blank' do
       subject.body = ''
-      expect(subject).to_not be_valid
+      expect(subject).not_to be_valid
     end
   end
 end

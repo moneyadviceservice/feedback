@@ -5,9 +5,9 @@ module Feedback
     describe '#feedback' do
       let(:body) { 'this is some feedback' }
       let(:user_agent) { 'some user agent' }
-      let(:referer) { 'where_i_came_from'}
-      let(:source) { 'account'}
-      let(:useful) { 'yes'}
+      let(:referer) { 'where_i_came_from' }
+      let(:source) { 'account' }
+      let(:useful) { 'yes' }
       let(:submission) { Submission.new(body: body, user_agent: user_agent, referer: referer, source: source, useful: useful) }
 
       it 'sends emails' do

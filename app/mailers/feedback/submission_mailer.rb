@@ -12,6 +12,5 @@ module Feedback
     def subject_from_submission(submission)
       submission.source.try(:humanize) || 'Unknown'
     end
-
   end
 end

@@ -5,23 +5,23 @@ module Feedback
     describe '#t_with_source' do
       context 'when allowed source' do
         it 'returns custom translation' do
-          allow(helper).to receive(:params) { { source: 'account' } }
-          helper.instance_variable_set("@virtual_path", 'feedback/submissions/index')
+          allow(helper).to receive(:params).and_return(source: 'account')
+          helper.instance_variable_set('@virtual_path', 'feedback/submissions/index')
           expect(helper.t_with_source('heading')).to eql(I18n.t('feedback.submissions.index.account.heading'))
         end
       end
 
       context 'when no source' do
         it 'returns default translation' do
-          helper.instance_variable_set("@virtual_path", 'feedback/submissions/index')
+          helper.instance_variable_set('@virtual_path', 'feedback/submissions/index')
           expect(helper.t_with_source('heading')).to eql(I18n.t('feedback.submissions.index.default.heading'))
         end
       end
 
       context 'when unknown source' do
         it 'returns default translation' do
-          allow(helper).to receive(:params) { { source: 'unknown' } }
-          helper.instance_variable_set("@virtual_path", 'feedback/submissions/index')
+          allow(helper).to receive(:params).and_return(source: 'unknown')
+          helper.instance_variable_set('@virtual_path', 'feedback/submissions/index')
           expect(helper.t_with_source('heading')).to eql(I18n.t('feedback.submissions.index.default.heading'))
         end
       end
