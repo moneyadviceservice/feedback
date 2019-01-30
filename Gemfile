@@ -1,7 +1,9 @@
 source 'http://gems.dev.mas.local'
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
 gemspec
+
+ruby '2.5.3'
 
 gem 'mysql2'
 
