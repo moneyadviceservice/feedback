@@ -5,7 +5,13 @@ gemspec
 
 gem 'mysql2'
 
+group :development, :test do
+  gem 'danger', require: false
+  gem 'danger-rubocop', require: false
+end
+
 group :test do
+  gem 'brakeman'
   gem 'rspec-rails'
   gem 'cucumber-rails', require: false
   gem 'i18n-debug'
