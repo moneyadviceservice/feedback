@@ -12,10 +12,11 @@ end
 
 group :test do
   gem 'brakeman'
-  gem 'rspec-rails'
   gem 'cucumber-rails', require: false
   gem 'i18n-debug'
+  gem 'rspec-rails'
   gem 'sqlite3'
+  gem 'tzinfo-data'
 end
 
 gem 'mas-build', '~> 2.0' if ENV['MAS_BUILD']
