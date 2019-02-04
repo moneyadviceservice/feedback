@@ -11,16 +11,19 @@ end
 Then(/^I should see a confirmation message$/) do
   expect(page).to have_content(
     I18n.t('feedback.submissions.create.default.heading')
-    )
+  )
 end
 
-Given(/^I visit a tool$/) do
-  visit feedback.root_path(locale: :en)
+Given(/^I am in the home page$/) do
+  visit root_path
 end
 
-When(/^I submit feedback about that tool$/) do
+When(/^I visit feedback tool$/) do
+  click_link('Improve this page')
+end
+
+When(/^I submit my feedback$/) do
   feedback_body = 'Some feedback.'
-  visit feedback.submissions_path(locale: :en)
   fill_in 'submission_body', with: feedback_body
   click_button 'Submit'
 end
