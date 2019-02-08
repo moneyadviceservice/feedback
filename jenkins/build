@@ -21,7 +21,6 @@ function run {
     fi
 }
 run bundle install
-run bowndler install --production
 run gem build *.gemspec
 run gem inabox *.gem -g http://gems.dev.mas.local
 

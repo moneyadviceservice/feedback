@@ -19,3 +19,8 @@ load 'rails/tasks/engine.rake'
 
 Bundler::GemHelper.install_tasks
 
+task :test do
+  exec "./test.sh"
+end
+
+task default: :test
